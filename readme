@@ -1,0 +1,54 @@
+# MyToken README
+
+## Introduction
+This repository contains a Solidity smart contract named `MyToken`. This contract implements a basic ERC20 token with functionalities such as minting and burning tokens. Below are the details of the functionalities and how to use them.
+
+## Requirements
+The contract fulfills the following requirements:
+
+1. The contract contains public variables that store the details about the coin:
+   - Token Name (`name`)
+   - Token Abbreviation (`symbol`)
+   - Total Supply (`totalSupply`)
+
+2. The contract has a mapping of addresses to balances (`balances`), which allows keeping track of the token balances for each address.
+
+3. The contract has a `mint` function that takes two parameters: an address (`_recipient`) and a value (`_value`). This function increases the total supply by `_value` and increases the balance of the `sender` address by that amount.
+
+4. The contract has a `burn` function, which works opposite to the `mint` function. It takes an address (`_owner`) and a value (`_value`). It deducts the value from the total supply and from the balance of the `sender`.
+
+5. The `burn` function has conditionals to ensure that the balance of the `sender` is greater than or equal to the amount that is supposed to be burned.
+
+## Usage
+
+### Deployment
+
+To deploy this contract, follow these steps:
+
+1. Deploy the contract using a Solidity compatible platform or an Ethereum development environment like Remix.
+2. Provide the following parameters during deployment:
+   - `_name`: The name of the token.
+   - `_symbol`: The abbreviation of the token.
+   - `_initialSupply`: The initial total supply of the token.
+
+### Minting Tokens
+
+To mint new tokens, call the `mint` function with the following parameters:
+
+- `_recipient`: The address to which the new tokens will be minted.
+- `_value`: The amount of tokens to be minted.
+
+### Burning Tokens
+
+To burn existing tokens, call the `burn` function with the following parameters:
+
+- `_owner`: The address of the token holder who wants to burn tokens.
+- `_value`: The amount of tokens to be burned.
+
+## Disclaimer
+
+This code is provided as-is and without any warranty. Use at your own risk. The authors and contributors are not responsible for any misuse or damages caused by this code.
+
+---
+
+Feel free to contribute to this repository by creating issues or pull requests. Thank you for using `MyToken`!
