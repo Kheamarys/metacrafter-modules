@@ -1,0 +1,29 @@
+# Module1 Smart Contract
+
+Module1 is an Ethereum smart contract built using Solidity. It extends the OpenZeppelin ERC20 and Ownable contracts to create a custom ERC20 token with some additional features.
+
+## Features
+
+- Custom ERC20 token named "Berwyn" with the symbol "BWN".
+- Minting new tokens can only be done by the contract owner.
+- Minting requires the specified amount to be greater than 190 Berwyn Tokens.
+- Burning tokens allows an address to decrease their own balance, subject to availability.
+- Transferring tokens includes additional validation checks to ensure a valid transfer.
+
+## Contract Deployment
+
+You can deploy this contract to an Ethereum network using Truffle, Hardhat, or other Ethereum development tools. Make sure to configure the deployment parameters, including the initial token supply.
+
+## Contract Interaction
+
+### Mint Tokens
+
+The `mint` function allows the contract owner to create and send new tokens to a specified address. The function enforces a requirement that the minted amount must be greater than 190 Berwyn Tokens.
+
+### Burn Tokens
+
+The `burn` function allows an address to burn a specified amount of their own tokens. The function checks if the sender has enough tokens to burn and reduces their balance accordingly.
+
+### Transfer Tokens
+
+The `transfer` function overrides the default ERC20 transfer behavior to include additional validation checks. It ensures that the transfer is not made to the zero address and that the sender has sufficient balance.
